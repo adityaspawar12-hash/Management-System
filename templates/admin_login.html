@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Control | Secure Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="admin-auth-body">
+
+    <div class="login-card admin-mode">
+        <div class="auth-header">
+            <h1 style="font-size: 60px; font-weight: 900; color: #f59e0b;">Admin login</h1>
+            <p>    Authorized Personnel Only</p>
+        </div>
+
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="uid" placeholder="Admin ID" autocomplete="off">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="pwd" placeholder="••••••••">
+        </div>
+
+        <button onclick="handleLogin('admin')" class="btn-admin-login">Unlock System</button>
+        
+        
+
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

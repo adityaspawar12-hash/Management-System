@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | Lottery </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+    <header class="user-header">
+        <div>
+            <h1 style="font-size: 60px; font-weight: 900;">Lottery </h1>
+            <p style="color: #668cc2;">Welcome, <span id="user-display">Player</span></p>
+        </div>
+        
+        <div class="search-box">
+            <input type="number" id="ticket-search" placeholder="Enter your 6-digit ticket">
+            <button onclick="checkMyTicket()" class="btn-search">Check</button>
+        </div>
+
+        <a href="/logout" class="logout-link">Logout</a>
+    </header>
+
+    <div class="prize-grid">
+        <div class="card grand-card mini">
+            <div class="card-header">
+                <h3> Grand Jackpot</h3>
+                <div class="jackpot-amount-small">₹1,00,000</div>
+            </div>
+            <div id="grand-list" class="results-area-small"></div>
+        </div>
+        
+        <div class="results-layout">
+            <div class="card">
+                <h3> Gold Winners</h3>
+                <div id="gold-list" class="results-area"></div>
+            </div>
+            <div class="card">
+                <h3> Silver Winners</h3>
+                <div id="silver-list" class="results-area"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+
+    <script>
+        // When the user page opens, immediately fetch the results
+        window.onload = function() {
+            if (typeof updateUI === 'function') {
+                updateUI();
+            }
+        };
+
+        // Professional touch: Refresh the numbers every 30 seconds automatically
+        setInterval(updateUI, 30000);
+    </script>
+</body>

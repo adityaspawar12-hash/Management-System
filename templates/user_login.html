@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Login | Lottery 2026</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="user-auth-body">
+
+    <div class="login-card">
+        <div class="auth-header">
+          
+          <h1 class="auth-title">Login</h1>
+            <p>       Welcome to Lottery website </p>
+        </div>
+
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="uid" placeholder="Enter your ID" autocomplete="off">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="pwd" placeholder="••••••••">
+        </div>
+
+        <button onclick="handleLogin('user')" class="btn-login">
+            Login to Dashboard
+        </button>
+
+       
+
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

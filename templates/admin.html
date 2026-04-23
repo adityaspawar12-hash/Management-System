@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Lottery 2026</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="admin-dashboard-body">
+
+    <nav class="admin-nav">
+        <div class="nav-content">
+            <span class="brand"> Admin<b>Panel</b></span>
+            <span class="user-tag">Active Session: {{ session['user'] }}</span>
+            <a href="/logout" class="logout-link">Secure Logout</a>
+        </div>
+    </nav>
+
+    <main class="admin-grid">
+        <div class="control-card silver">
+            <div class="card-head">
+                <h3> Silver Class</h3>
+                <span class="prize-range">₹1,000 - ₹5,000</span>
+            </div>
+            <button onclick="triggerDraw('Silver')" class="draw-btn">Execute Draw</button>
+            <div id="silver-list" class="live-results"></div>
+        </div>
+
+        <div class="control-card gold">
+            <div class="card-head">
+                <h3> Gold Class</h3>
+                <span class="prize-range">₹7,000 - ₹12,000</span>
+            </div>
+            <button onclick="triggerDraw('Gold')" class="draw-btn">Execute Draw</button>
+            <div id="gold-list" class="live-results"></div>
+        </div>
+
+        <div class="control-card grand">
+            <div class="card-head">
+                <h3> Grand Prize</h3>
+                <span class="prize-range">₹1,00,000</span>
+            </div>
+            <button onclick="triggerDraw('Grand')" class="draw-btn btn-danger">Generate Jackpot</button>
+            <div id="grand-list" class="live-results"></div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>
